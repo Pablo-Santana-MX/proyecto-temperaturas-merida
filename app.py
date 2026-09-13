@@ -39,7 +39,7 @@ def load_data():
         'temp_media': data['daily']['temperature_2m_mean']
     })
     df.set_index('fecha', inplace=True)
-    monthly_data = df.resample('M').mean()
+    monthly_data = df.resample('ME').mean()
     monthly_data['año'] = monthly_data.index.year
     monthly_data['mes'] = monthly_data.index.month
     return monthly_data
