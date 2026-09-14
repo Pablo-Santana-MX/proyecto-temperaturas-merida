@@ -16,6 +16,14 @@ El proyecto correlaciona el incremento térmico estadístico con el crecimiento 
 
 ## Marco Teórico
 De acuerdo con investigaciones recientes de la UNAM (2025/2026), Mérida duplicó su mancha urbana entre 2000 y 2020. Este crecimiento disperso e impulsado por el auge inmobiliario (con más de 300 desarrollos habitacionales nuevos) ha provocado la pérdida anual de más de 200 hectáreas de selvas y montes. La sustitución de vegetación natural por asfalto impide la evapotranspiración, generando un efecto de *Isla de Calor* que puede aumentar la temperatura local hasta en 3.9 °C.
+## 👁️ Vista Previa del Dashboard
+
+Aquí puedes ver el dashboard en acción:
+
+![Vista de la gráfica principal](captura1.png)
+
+![Vista del análisis de tendencia](captura2.png)
+
 
 ## Cómo ejecutar el Dashboard Localmente
 
