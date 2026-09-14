@@ -3,7 +3,8 @@
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://TU-ENLACE-AQUI.streamlit.app/)
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-... (resto de tus etiquetas)
+... 
+
 Este proyecto de Ciencia de Datos analiza la evolución histórica de las temperaturas medias en Mérida, Yucatán, desde 1950 hasta 2026, utilizando datos de reanálisis climático del modelo **ERA5 (Copernicus/ECMWF)** obtenidos mediante la API de Open-Meteo.
 
 El proyecto correlaciona el incremento térmico estadístico con el crecimiento desmedido de la **mancha urbana** y el fenómeno de la **Isla de Calor Urbana (ICU)**.
