@@ -45,7 +45,9 @@ def load_data():
     monthly_data['año'] = monthly_data.index.year
     monthly_data['mes'] = monthly_data.index.month
     
-    return monthly_datawith st.spinner("Extrayendo datos de la API ERA5 (Copernicus)..."):
+    return monthly_data
+    
+with st.spinner("Extrayendo datos de la API ERA5 (Copernicus)..."):
     monthly_data = load_data()
 
 pivot_df = monthly_data.pivot(index='mes', columns='año', values='temp_media')
