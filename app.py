@@ -28,26 +28,24 @@ def load_data():
         "longitude": -89.6170,
         "start_date": "1950-01-01",
         "end_date": "2026-08-31",
-        "monthly": "temperature_2m_mean",  # <-- Pedimos datos mensuales directo a la API
+        "daily": "temperature_2m_mean", # Regresamos a daily
         "timezone": "America/Merida"
     }
     response = requests.get(url, params=params)
     data = response.json()
     
     df = pd.DataFrame({
-        'fecha': pd.to_datetime(data['monthly']['time']),
-        'temp_media': data['monthly']['temperature_2m_mean']
+        'fecha': pd.to_datetime(data['daily']['time']),
+        'temp_media': data['daily']['temperature_2m_mean']
     })
-    
     df.set_index('fecha', inplace=True)
     
-    # Como los datos ya son mensuales, nos saltamos el resample
-    monthly_data = df.copy()
+    # Agrupamos por mes a fin de mes (ME) que es el estándar de Pandas 2.2+
+    monthly_data = df.resample('ME').mean()
     monthly_data['año'] = monthly_data.index.year
     monthly_data['mes'] = monthly_data.index.month
     
-    return monthly_data
-with st.spinner("Extrayendo datos de la API ERA5 (Copernicus)..."):
+    return monthly_datawith st.spinner("Extrayendo datos de la API ERA5 (Copernicus)..."):
     monthly_data = load_data()
 
 pivot_df = monthly_data.pivot(index='mes', columns='año', values='temp_media')
